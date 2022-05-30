@@ -63,7 +63,7 @@ public class Rank {
 //				String pw = rs.getString(2);
 				String name = rs.getString(3);
 //				int money = rs.getType(4);
-				String seedMoney = rs.getString(4);
+				String seedMoney = rs.getString(5);
 				System.out.print(id + "\t");
 //				System.out.print(pw + "\t");
 				System.out.print(name+ "\t");
