@@ -3,7 +3,7 @@ package view;
 import java.util.Scanner;
 import model.Rank;
 
-import model.DAO;
+import model.Join;
 import model.DTO;
 
 public class View { // view 사용자에게 보이기 위한 main 만들기
@@ -18,14 +18,16 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 			if (menu == 1) {
 				System.out.println("===회원가입===");
 
-				System.out.print("ID을 입력하세요>>");
+				System.out.print("ID을 입력하세요 >> ");
 				String id = sc.next();
-				System.out.print("PW를 입력하세요>>");
+				System.out.print("PW를 입력하세요 >> ");
 				String pw = sc.next();
-				System.out.print("닉네임을 입력하세요>>");
+				System.out.print("닉네임을 입력하세요 >> ");
 				String name = sc.next();
-				DTO dto = new DTO(id, pw, name);
-				DAO dao = new DAO();
+				System.out.print("성별을 입력하세요 (MAN, WOMAN) >> ");
+				String gender= sc.next();
+				DTO dto = new DTO(id, pw, name, gender);
+				Join dao = new Join();
 				// int cnt =dao.insert(dto);
 				// if(cnt>0) {
 				System.out.println("회원가입 성공");

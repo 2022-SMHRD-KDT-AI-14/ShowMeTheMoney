@@ -7,19 +7,20 @@ public class DTO {
 	private String id;    //아이디
 	private String pw;	//패스워드
 	private String name; //닉네임
+	private String gender; //닉네임
 	
 	//----------------------------------------
 	
 	
-	public DTO(String id,String pw,String name) {
+	public DTO(String id,String pw,String name ,String gender) {
 		super();
 		this.id=id;
 		this.pw=pw;
 		this.name=name;
-		
+		this.gender=gender;
 	//------------------------------------------	
-		
-	}
+	
+}
 
 	public String getId() {
 		return id;
@@ -43,5 +44,13 @@ public class DTO {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 }
