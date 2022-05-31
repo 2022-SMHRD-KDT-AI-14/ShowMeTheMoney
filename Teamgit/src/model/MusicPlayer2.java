@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 
 import javazoom.jl.player.MP3Player;
-public class MusicPlayer {
+public class MusicPlayer2 {
 	  // Controller Class
 
 	   ArrayList<Music> musicList = new ArrayList<Music>();
@@ -12,10 +12,10 @@ public class MusicPlayer {
 
 	   MP3Player mp3 = new MP3Player();
 
-	   public MusicPlayer() {
+	   public MusicPlayer2() {
 
 	      // 음악 전체 목록
-	      musicList.add(new Music("BGM", "C:/Users/smhrd/Desktop/BGM.mp3"));
+	      musicList.add(new Music("손실BGM", "C:/Users/smhrd/Desktop/손실BGM.mp3"));
 	   }
 	   
 	 
