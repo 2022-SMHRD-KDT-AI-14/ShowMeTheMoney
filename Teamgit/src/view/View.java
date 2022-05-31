@@ -11,6 +11,9 @@ import model.Invest;
 public class View { // view 사용자에게 보이기 위한 main 만들기
 
 	public static void main(String[] args) {
+		
+		String login_id = ""; // 로그인한 id 받기
+		
 		Scanner sc = new Scanner(System.in);
 		
 //		invest money = new invest();
@@ -48,7 +51,7 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 				System.out.print("비밀번호 입력");
 				String user_pw = sc.next();
 				DTO dto = new DTO(user_id, user_pw);
-				log.login(dto);
+				login_id = log.login(dto); // 받은 아이디값 login에 저장
 				
 // 			    if() {
 //					// 로그인이 성공 게임으로 진행
@@ -70,7 +73,7 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 	    }else if( select == 2) {
 	    	money.investmid();
 	    } else if (select == 3) {
-	    	money.investhigh();
+	    	money.investhigh(login_id); // 로그인한 id로 출력
 	    } else {
 	    	System.out.println("잘못 입력하셨습니다!");
 	    }

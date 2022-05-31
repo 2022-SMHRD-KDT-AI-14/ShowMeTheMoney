@@ -16,7 +16,7 @@ public class Login {
 	PreparedStatement psmt; // SQL문을 실행하는 객체
 	ResultSet rs; // Query의 결과값을 받아오는 객체
 	
-	public void login(DTO dto) {
+	public String login(DTO dto) {
 		
 		String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"; // DB주소
 		String db_id = "campus_e_0516_2"; // db_id
@@ -64,6 +64,7 @@ public class Login {
 			e.printStackTrace();
 			System.out.println("로딩실패");
 		}
+		return dto.getId();
 	}
 	
 }

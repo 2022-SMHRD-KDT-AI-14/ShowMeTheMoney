@@ -13,7 +13,7 @@ public class Invest {
 	PreparedStatement psmt; // SQL문을 실행하는 객체
 	int rs; // Query의 결과값을 받아오는 객체
 
-	public void investhigh() {
+	public void investhigh(String id) {
 		Random r = new Random();
 		Scanner sc = new Scanner(System.in);
 		int num0 = 1000000;
@@ -106,10 +106,12 @@ public class Invest {
 			}
 			cnt++;
 			if (cnt == 6) {
-				String sql = "update user_info set SEEDMONEY = ";
+				String sql = "update user_info set SEEDMONEY = ? where id = ?";
 
 				try {
 					psmt = conn.prepareStatement(sql);
+					psmt.setInt(1,num0);				
+					psmt.setString(2,id);
 					rs = psmt.executeUpdate();
 					System.out.println("종료되었습니다.");
 					Rank rank = new Rank();
