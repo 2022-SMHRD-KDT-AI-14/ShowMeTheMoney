@@ -25,13 +25,13 @@ public class Rank {
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("로딩성공");
+//			System.out.println("로딩성공");
 			
 			try {
 				conn = DriverManager.getConnection(url, db_id, db_pw);
 			
 				if(conn!=null) {
-					System.out.println("DB 연결 성공");
+//					System.out.println("DB 연결 성공");
 				}
 			
 			} catch (SQLException e) {
@@ -49,7 +49,6 @@ public class Rank {
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-//			rs.next();// 커서 한칸 내리기
 			System.out.print("RANK"+"\t");
 			System.out.print("ID"+"\t");
 //			System.out.print("PW"+"\t");

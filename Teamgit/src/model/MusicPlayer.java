@@ -14,8 +14,7 @@ public class MusicPlayer {
 	   public MusicPlayer() {
 
 	      // 음악 전체 목록
-
-	      musicList.add(new Music("BGM", "C:/Users/smhrd/Desktop/MP3/music/BGM.mp3"));
+	      musicList.add(new Music("BGM", "C:/Users/smhrd/Desktop/BGM.mp3"));
 	   }
 
 	   public Music play() {

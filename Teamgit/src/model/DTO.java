@@ -21,6 +21,16 @@ public class DTO {
 	//------------------------------------------	
 	
 }
+	
+	
+
+	public DTO(String id, String pw) {
+		super();
+		this.id = id;
+		this.pw = pw;
+	}
+
+
 
 	public String getId() {
 		return id;
