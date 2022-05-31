@@ -20,7 +20,7 @@ public class Join {
 			// 예외처리를 해줘야 한다.
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.println("드라이버 로딩 성공");
-
+       
 			// 2. DB 연결
 			// 1) url 2) db_id 3) db_pw
 			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"; // DB주소
@@ -44,8 +44,8 @@ public class Join {
 			String pw = dto.getPw();
 			String name = dto.getName();
 			String gender=dto.getGender();
-
-			String sql = "insert into user_info values(?, ?, ?, ?,1.000.000)";
+			
+			String sql = "insert into user_info values(?, ?, ?, ?, 1000000)";
 			psmt = conn.prepareStatement(sql);
 			// CRUD
 			// C: Create (Insert)

@@ -2,16 +2,19 @@ drop table user_info;
 
 create table user_info(
 id varchar2(20),
-password varchar2(10) not null,
+pw varchar2(10) not null,
 name varchar2(20) not null,
 gender char(10) not null,
-seedmoney number(5),
+seedmoney number(20),
 constraint user_info_id_pk primary key(id),
 constraint user_info_gender_ck check(gender in('MAN', 'WOMAN'))
 );
 
 insert into user_info
-values('master','1234','마스터','MAN',1000);
+values('master','1234','마스터','MAN',2000000);
+
+insert into user_info
+values('master2','1234','마스터2','MAN',1000000);
 
 select * from user_info;
 

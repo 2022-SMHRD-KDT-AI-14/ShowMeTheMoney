@@ -28,8 +28,8 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 				String gender= sc.next();
 				DTO dto = new DTO(id, pw, name, gender);
 				Join dao = new Join();
-				// int cnt =dao.insert(dto);
-				// if(cnt>0) {
+				 int cnt =dao.insert(dto);
+				 if(cnt>0) {
 				System.out.println("회원가입 성공");
 
 			} else {
@@ -55,4 +55,5 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 
 	
 
+}
 }
