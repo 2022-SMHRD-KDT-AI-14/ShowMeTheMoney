@@ -9,9 +9,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Invest {
-	Connection conn; // DB ì—°ê²°ì„ ìœ„í•œ ê°ì²´
-	PreparedStatement psmt; // SQLë¬¸ì„ ì‹¤í–‰í•˜ëŠ” ê°ì²´
-	int rs; // Queryì˜ ê²°ê³¼ê°’ì„ ë°›ì•„ì˜¤ëŠ” ê°ì²´
+	Connection conn; // DB ¿¬°áÀ» À§ÇÑ °´Ã¼
+	PreparedStatement psmt; // SQL¹®À» ½ÇÇàÇÏ´Â °´Ã¼
+	int rs; // QueryÀÇ °á°ú°ªÀ» ¹Ş¾Æ¿À´Â °´Ã¼
 	DAO dao = new DAO();
 
 	public void investhigh(String id) {
@@ -25,7 +25,7 @@ public class Invest {
 		int num3 = 1;
 		int buy = 0;
 
-		String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"; // DBì£¼ì†Œ
+		String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"; // DBÁÖ¼Ò
 		String db_id = "campus_e_0516_2"; // db_id
 		String db_pw = "smhrd2"; // db_pw
 
@@ -43,12 +43,12 @@ public class Invest {
 			e.printStackTrace();
 		}
 
-		// ì´ìµë¥  140% ì†í•´ìœ¨ -70%
+		// ÀÌÀÍ·ü 140% ¼ÕÇØÀ² -70%
 
 		int num1 = (num0 / 100) * (r.nextInt(210) - 70);
 
 		while (cnt <= 5) {
-			// ì•Œê³ ë¦¬ì¦˜
+			// ¾Ë°í¸®Áò
 
 			num1 = (num0 / 100) * (r.nextInt(210) - 70);
 
@@ -56,14 +56,14 @@ public class Invest {
 			if (cnt == 2 ) {
 				System.out.println();
 				System.out.println("-----------------------------");
-				System.out.println(" ìš©í˜„ìŒ¤ì˜ ì¢…ëª©ì¶”ì²œ!! êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+				System.out.println(" ¿ëÇö½ÜÀÇ Á¾¸ñÃßÃµ!! ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?");
 				System.out.println("-----------------------------");
-					System.out.println("[1] Yes(10ë§Œì› ì°¨ê°) [2] NO");
+					System.out.println("[1] Yes(10¸¸¿ø Â÷°¨) [2] NO");
 					buy = sc.nextInt();
 					if (buy == 1) {
 						num0 = num0 - 100000;
-						System.out.println("ì–´ë–¤ ì¢…ëª©ì˜ ì •ë³´ë¥¼ êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
-						System.out.println("[1] ì‚¼ì„±ì „ì  [2] ì…€íŠ¸ë¦¬ì˜¨  [3] ì¹´ì¹´ì˜¤");
+						System.out.println("¾î¶² Á¾¸ñÀÇ Á¤º¸¸¦ ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?");
+						System.out.println("[1] »ï¼ºÀüÀÚ  [2] ¼¿Æ®¸®¿Â  [3] Ä«Ä«¿À");
 					    int buy2 = sc.nextInt();
 					    if(buy2==1) {
 					    	dao.buyNews(7);
@@ -78,14 +78,14 @@ public class Invest {
 				}if (cnt == 4 ) {
 					System.out.println();
 					System.out.println("-----------------------------");
-					System.out.println(" ìš©í˜„ìŒ¤ì˜ ì¢…ëª©ì¶”ì²œ!! êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+					System.out.println(" ¿ëÇö½ÜÀÇ Á¾¸ñÃßÃµ!! ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?");
 					System.out.println("-----------------------------");
-					System.out.println("[1] Yes(10ë§Œì› ì°¨ê°) [2] NO");
+					System.out.println("[1] Yes(10¸¸¿ø Â÷°¨) [2] NO");
 					buy = sc.nextInt();
 					if (buy == 1) {
 						num0 = num0 - 100000;
-						System.out.println("ì–´ë–¤ ì¢…ëª©ì˜ ì •ë³´ë¥¼ êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
-						System.out.println("[1] ì‚¼ì„±ì „ì  [2] ì…€íŠ¸ë¦¬ì˜¨  [3] ì¹´ì¹´ì˜¤");
+						System.out.println("¾î¶² Á¾¸ñÀÇ Á¤º¸¸¦ ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?");
+						System.out.println("[1] »ï¼ºÀüÀÚ  [2] ¼¿Æ®¸®¿Â  [3] Ä«Ä«¿À");
 					    int buy2 = sc.nextInt();
 					    if(buy2==1) {
 					    	dao.buyNews(10);
@@ -99,8 +99,8 @@ public class Invest {
 				
 				}
 		    System.out.println();
-			System.out.println(cnt + ". íˆ¬ìí•  ê³³ì„ ì„ íƒí•˜ì„¸ìš”!");
-			System.out.println("[1] ì‚¼ì„±ì „ì [2] ì…€íŠ¸ë¦¬ì˜¨ [3] ì¹´ì¹´ì˜¤ [4] ì•„ë¬´ê²ƒë„ ì„ íƒí•˜ì§€ ì•ŠëŠ”ë‹¤(ì›ê¸ˆìœ ì§€)");
+			System.out.println(cnt + ". ÅõÀÚÇÒ °÷À» ¼±ÅÃÇÏ¼¼¿ä!");
+			System.out.println("[1] »ï¼ºÀüÀÚ [2] ¼¿Æ®¸®¿Â [3] Ä«Ä«¿À [4] ¾Æ¹«°Íµµ ¼±ÅÃÇÏÁö ¾Ê´Â´Ù(¿ø±İÀ¯Áö)");
 			int sel = sc.nextInt();
 			if (sel == 1) {
 				if (cnt == 2) {
@@ -110,8 +110,8 @@ public class Invest {
 					num1 = (num0 / 100) * 120;
 				}
 				num0 = num0 + num1;
-				System.out.println("1ë…„ íˆ¬ì ì†ìµì•¡ : " + num1 + "ì›");
-				System.out.println("ì”ì•¡ì€ " + num0 + "ì› ì…ë‹ˆë‹¤.");
+				System.out.println("1³â ÅõÀÚ ¼ÕÀÍ¾× : " + num1 + "¿ø");
+				System.out.println("ÀÜ¾×Àº " + num0 + "¿ø ÀÔ´Ï´Ù.");
 
 			} else if (sel == 2) {
 				if (cnt == 2) {
@@ -122,8 +122,8 @@ public class Invest {
 				}
 
 				num0 = num0 + num1;
-				System.out.println("1ë…„ íˆ¬ì ì†ìµì•¡ : " + num1 + "ì›");
-				System.out.println("ì”ì•¡ì€ " + num0 + "ì› ì…ë‹ˆë‹¤.");
+				System.out.println("1³â ÅõÀÚ ¼ÕÀÍ¾× : " + num1 + "¿ø");
+				System.out.println("ÀÜ¾×Àº " + num0 + "¿ø ÀÔ´Ï´Ù.");
 
 			} else if (sel == 3) {
 				if (cnt == 2) {
@@ -133,22 +133,22 @@ public class Invest {
 					num1 = (num0 / 100) * 130;
 				}
 				num0 = num0 + num1;
-				System.out.println("1ë…„ íˆ¬ì ì†ìµì•¡ : " + num1 + "ì›");
-				System.out.println("ì”ì•¡ì€ " + num0 + "ì› ì…ë‹ˆë‹¤.");
+				System.out.println("1³â ÅõÀÚ ¼ÕÀÍ¾× : " + num1 + "¿ø");
+				System.out.println("ÀÜ¾×Àº " + num0 + "¿ø ÀÔ´Ï´Ù.");
 
 			} else if (sel == 4) {
 				num0 = num0 + sum;
 				if(cnt == 2 || cnt == 4) {
 					if(buy == 1) {
-						System.out.println("1ë…„ íˆ¬ì ì†ìµì•¡ : - 100000ì›" );
+						System.out.println("1³â ÅõÀÚ ¼ÕÀÍ¾× : - 100000¿ø" );
 				} 
-					System.out.println("1ë…„ íˆ¬ì ì†ìµì•¡ : " + sum + "ì›");
+					System.out.println("1³â ÅõÀÚ ¼ÕÀÍ¾× : " + sum + "¿ø");
 				}
 				
-				System.out.println("ì”ì•¡ì€ " + num0 + "ì› ì…ë‹ˆë‹¤.");
+				System.out.println("ÀÜ¾×Àº " + num0 + "¿ø ÀÔ´Ï´Ù.");
 
 			} else {
-				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
+				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
 
 			}
 			cnt++;
@@ -160,7 +160,7 @@ public class Invest {
 					psmt.setInt(1,num0);				
 					psmt.setString(2,id);
 					rs = psmt.executeUpdate();
-					System.out.println("ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
+					System.out.println("Á¾·áµÇ¾ú½À´Ï´Ù.");
 					Rank rank = new Rank();
 					rank.gamerank();
 
@@ -170,13 +170,13 @@ public class Invest {
 				}
 
 			} else {
-				System.out.println("ê³„ì†í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+				System.out.println("°è¼ÓÇÏ½Ã°Ú½À´Ï±î?");
 				System.out.println("[1] Yes [2] NO");
 				num2 = sc.nextInt();
 			}
 			if (num2 == 2) {
-				System.out.println("ì”ì•¡ì€ " + num0 + "ì› ì…ë‹ˆë‹¤.");
-				System.out.println("ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤!");
+				System.out.println("ÀÜ¾×Àº " + num0 + "¿ø ÀÔ´Ï´Ù.");
+				System.out.println("Á¾·áµÇ¾ú½À´Ï´Ù!");
 				break;
 			}
 			}
@@ -186,7 +186,7 @@ public class Invest {
 	
 
 	public void investmid(String id) {
-		String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"; // DBì£¼ì†Œ
+		String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"; // DBÁÖ¼Ò
 		String db_id = "campus_e_0516_2"; // db_id
 		String db_pw = "smhrd2"; // db_pw
 
@@ -212,23 +212,23 @@ public class Invest {
 		int num2 = 0;
 		int buy = 0;
 
-		// ì´ìµë¥  100% ì†í•´ìœ¨ -55%
+		// ÀÌÀÍ·ü 100% ¼ÕÇØÀ² -55%
 
 		int num1 = ((num0 / 100) * r.nextInt(155) - 55);
 		while (cnt <= 5) {
 			dao.selectNews(cnt);
-			// ì•Œê³ ë¦¬ì¦˜
+			// ¾Ë°í¸®Áò
 			if (cnt == 2 ) {
 				System.out.println();
 				System.out.println("-----------------------------");
-				System.out.println(" ìš©í˜„ìŒ¤ì˜ ì¢…ëª©ì¶”ì²œ!! êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+				System.out.println(" ¿ëÇö½ÜÀÇ Á¾¸ñÃßÃµ!! ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?");
 				System.out.println("-----------------------------");
-					System.out.println("[1] Yes(10ë§Œì› ì°¨ê°) [2] NO");
+					System.out.println("[1] Yes(10¸¸¿ø Â÷°¨) [2] NO");
 					buy = sc.nextInt();
 					if (buy == 1) {
 						num0 = num0 - 100000;
-						System.out.println("ì–´ë–¤ ì¢…ëª©ì˜ ì •ë³´ë¥¼ êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
-						System.out.println("[1] ì‚¼ì„±ì „ì  [2] ì…€íŠ¸ë¦¬ì˜¨  [3] ì¹´ì¹´ì˜¤");
+						System.out.println("¾î¶² Á¾¸ñÀÇ Á¤º¸¸¦ ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?");
+						System.out.println("[1] »ï¼ºÀüÀÚ  [2] ¼¿Æ®¸®¿Â  [3] Ä«Ä«¿À");
 					    int buy2 = sc.nextInt();
 					    if(buy2==1) {
 					    	dao.buyNews(7);
@@ -243,14 +243,14 @@ public class Invest {
 				}if (cnt == 4 ) {
 					System.out.println();
 					System.out.println("-----------------------------");
-					System.out.println(" ìš©í˜„ìŒ¤ì˜ ì¢…ëª©ì¶”ì²œ!! êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+					System.out.println(" ¿ëÇö½ÜÀÇ Á¾¸ñÃßÃµ!! ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?");
 					System.out.println("-----------------------------");
-					System.out.println("[1] Yes(10ë§Œì› ì°¨ê°) [2] NO");
+					System.out.println("[1] Yes(10¸¸¿ø Â÷°¨) [2] NO");
 					buy = sc.nextInt();
 					if (buy == 1) {
 						num0 = num0 - 100000;
-						System.out.println("ì–´ë–¤ ì¢…ëª©ì˜ ì •ë³´ë¥¼ êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
-						System.out.println("[1] ì‚¼ì„±ì „ì  [2] ì…€íŠ¸ë¦¬ì˜¨  [3] ì¹´ì¹´ì˜¤");
+						System.out.println("¾î¶² Á¾¸ñÀÇ Á¤º¸¸¦ ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?");
+						System.out.println("[1] »ï¼ºÀüÀÚ  [2] ¼¿Æ®¸®¿Â  [3] Ä«Ä«¿À");
 					    int buy2 = sc.nextInt();
 					    if(buy2==1) {
 					    	dao.buyNews(10);
@@ -266,8 +266,8 @@ public class Invest {
 
 			num1 = ((num0 / 100) * r.nextInt(155) - 55);
 			System.out.println();
-			System.out.println(cnt + ". íˆ¬ìí•  ê³³ì„ ì„ íƒí•˜ì„¸ìš”!");
-			System.out.println("[1] ì‚¼ì„±ì „ì [2] ì…€íŠ¸ë¦¬ì˜¨ [3] ì¹´ì¹´ì˜¤ [4] ì•„ë¬´ê²ƒë„ ì„ íƒí•˜ì§€ ì•ŠëŠ”ë‹¤(ì›ê¸ˆìœ ì§€)");
+			System.out.println(cnt + ". ÅõÀÚÇÒ °÷À» ¼±ÅÃÇÏ¼¼¿ä!");
+			System.out.println("[1] »ï¼ºÀüÀÚ [2] ¼¿Æ®¸®¿Â [3] Ä«Ä«¿À [4] ¾Æ¹«°Íµµ ¼±ÅÃÇÏÁö ¾Ê´Â´Ù(¿ø±İÀ¯Áö)");
 			int sel = sc.nextInt();
 			if (sel == 1) {
 				if (cnt == 2) {
@@ -277,8 +277,8 @@ public class Invest {
 					num1 = -(num0 / 100) * 40;
 				}
 				num0 = num0 + num1;
-				System.out.println("1ë…„ íˆ¬ì ì†ìµì•¡ : " + num1 + "ì›");
-				System.out.println("ì”ì•¡ì€ " + num0 + "ì› ì…ë‹ˆë‹¤.");
+				System.out.println("1³â ÅõÀÚ ¼ÕÀÍ¾× : " + num1 + "¿ø");
+				System.out.println("ÀÜ¾×Àº " + num0 + "¿ø ÀÔ´Ï´Ù.");
 
 			} else if (sel == 2) {
 				if (cnt == 2) {
@@ -289,8 +289,8 @@ public class Invest {
 				}
 
 				num0 = num0 + num1;
-				System.out.println("1ë…„ íˆ¬ì ì†ìµì•¡ : " + num1 + "ì›");
-				System.out.println("ì”ì•¡ì€ " + num0 + "ì› ì…ë‹ˆë‹¤.");
+				System.out.println("1³â ÅõÀÚ ¼ÕÀÍ¾× : " + num1 + "¿ø");
+				System.out.println("ÀÜ¾×Àº " + num0 + "¿ø ÀÔ´Ï´Ù.");
 
 			} else if (sel == 3) {
 				if (cnt == 2) {
@@ -300,23 +300,23 @@ public class Invest {
 					num1 = (num0 / 100) * 75;
 				}
 				num0 = num0 + num1;
-				System.out.println("1ë…„ íˆ¬ì ì†ìµì•¡ : " + num1 + "ì›");
-				System.out.println("ì”ì•¡ì€ " + num0 + "ì› ì…ë‹ˆë‹¤.");
+				System.out.println("1³â ÅõÀÚ ¼ÕÀÍ¾× : " + num1 + "¿ø");
+				System.out.println("ÀÜ¾×Àº " + num0 + "¿ø ÀÔ´Ï´Ù.");
 
 			} else if (sel == 4) {
 				num0 = num0 + sum;
 				if(cnt == 2 || cnt == 4) {
 					if(buy == 1) {
-						System.out.println("1ë…„ íˆ¬ì ì†ìµì•¡ : - 100000ì›" );
+						System.out.println("1³â ÅõÀÚ ¼ÕÀÍ¾× : - 100000¿ø" );
 				} 
-					System.out.println("1ë…„ íˆ¬ì ì†ìµì•¡ : " + sum + "ì›");
+					System.out.println("1³â ÅõÀÚ ¼ÕÀÍ¾× : " + sum + "¿ø");
 				}
 				
-				System.out.println("ì”ì•¡ì€ " + num0 + "ì› ì…ë‹ˆë‹¤.");
+				System.out.println("ÀÜ¾×Àº " + num0 + "¿ø ÀÔ´Ï´Ù.");
 	
 
 			} else {
-				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
+				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
 
 			}
 			cnt++;
@@ -328,7 +328,7 @@ public class Invest {
 					psmt.setInt(1,num0);				
 					psmt.setString(2,id);
 					rs = psmt.executeUpdate();
-					System.out.println("ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
+					System.out.println("Á¾·áµÇ¾ú½À´Ï´Ù.");
 					Rank rank = new Rank();
 					rank.gamerank();
 
@@ -337,13 +337,13 @@ public class Invest {
 					e.printStackTrace();
 				}
 			} else {
-				System.out.println("ê³„ì†í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+				System.out.println("°è¼ÓÇÏ½Ã°Ú½À´Ï±î?");
 				System.out.println("[1] Yes [2] NO");
 				num2 = sc.nextInt();
 			}
 			if (num2 == 2) {
-				System.out.println("ì”ì•¡ì€ " + num0 + "ì› ì…ë‹ˆë‹¤.");
-				System.out.println("ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤!");
+				System.out.println("ÀÜ¾×Àº " + num0 + "¿ø ÀÔ´Ï´Ù.");
+				System.out.println("Á¾·áµÇ¾ú½À´Ï´Ù!");
 				break;
 			}
 
@@ -352,7 +352,7 @@ public class Invest {
 	}
 
 	public void investlow(String id) {
-		String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"; // DBì£¼ì†Œ
+		String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"; // DBÁÖ¼Ò
 		String db_id = "campus_e_0516_2"; // db_id
 		String db_pw = "smhrd2"; // db_pw
 
@@ -378,23 +378,23 @@ public class Invest {
 		int num2 = 0;
 		int buy = 0;
 
-		// ì´ìµë¥  60% ì†í•´ìœ¨ -35%
+		// ÀÌÀÍ·ü 60% ¼ÕÇØÀ² -35%
 
 		int num1 = ((num0 / 100) * r.nextInt(95) - 35);
 		while (cnt <= 5) {
-			// ì•Œê³ ë¦¬ì¦˜
+			// ¾Ë°í¸®Áò
 			dao.selectNews(cnt);
 			if (cnt == 2 ) {
 				System.out.println();
 				System.out.println("-----------------------------");
-				System.out.println(" ìš©í˜„ìŒ¤ì˜ ì¢…ëª©ì¶”ì²œ!! êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+				System.out.println(" ¿ëÇö½ÜÀÇ Á¾¸ñÃßÃµ!! ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?");
 				System.out.println("-----------------------------");
-					System.out.println("[1] Yes(10ë§Œì› ì°¨ê°) [2] NO");
+					System.out.println("[1] Yes(10¸¸¿ø Â÷°¨) [2] NO");
 					buy = sc.nextInt();
 					if (buy == 1) {
 						num0 = num0 - 100000;
-						System.out.println("ì–´ë–¤ ì¢…ëª©ì˜ ì •ë³´ë¥¼ êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
-						System.out.println("[1] ì‚¼ì„±ì „ì  [2] ì…€íŠ¸ë¦¬ì˜¨  [3] ì¹´ì¹´ì˜¤");
+						System.out.println("¾î¶² Á¾¸ñÀÇ Á¤º¸¸¦ ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?");
+						System.out.println("[1] »ï¼ºÀüÀÚ  [2] ¼¿Æ®¸®¿Â  [3] Ä«Ä«¿À");
 					    int buy2 = sc.nextInt();
 					    if(buy2==1) {
 					    	dao.buyNews(7);
@@ -409,14 +409,14 @@ public class Invest {
 				}if (cnt == 4 ) {
 					System.out.println();
 					System.out.println("-----------------------------");
-					System.out.println(" ìš©í˜„ìŒ¤ì˜ ì¢…ëª©ì¶”ì²œ!! êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+					System.out.println(" ¿ëÇö½ÜÀÇ Á¾¸ñÃßÃµ!! ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?");
 					System.out.println("-----------------------------");
-					System.out.println("[1] Yes(10ë§Œì› ì°¨ê°) [2] NO");
+					System.out.println("[1] Yes(10¸¸¿ø Â÷°¨) [2] NO");
 					buy = sc.nextInt();
 					if (buy == 1) {
 						num0 = num0 - 100000;
-						System.out.println("ì–´ë–¤ ì¢…ëª©ì˜ ì •ë³´ë¥¼ êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
-						System.out.println("[1] ì‚¼ì„±ì „ì  [2] ì…€íŠ¸ë¦¬ì˜¨  [3] ì¹´ì¹´ì˜¤");
+						System.out.println("¾î¶² Á¾¸ñÀÇ Á¤º¸¸¦ ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?");
+						System.out.println("[1] »ï¼ºÀüÀÚ  [2] ¼¿Æ®¸®¿Â  [3] Ä«Ä«¿À");
 					    int buy2 = sc.nextInt();
 					    if(buy2==1) {
 					    	dao.buyNews(10);
@@ -433,8 +433,8 @@ public class Invest {
 			num1 = ((num0 / 100) * r.nextInt(95) - 35);
 			
 			System.out.println();
-			System.out.println(cnt + ". íˆ¬ìí•  ê³³ì„ ì„ íƒí•˜ì„¸ìš”!");
-			System.out.println("[1] ì‚¼ì„±ì „ì [2] ì…€íŠ¸ë¦¬ì˜¨ [3] ì¹´ì¹´ì˜¤ [4] ì•„ë¬´ê²ƒë„ ì„ íƒí•˜ì§€ ì•ŠëŠ”ë‹¤(ì›ê¸ˆìœ ì§€)");
+			System.out.println(cnt + ". ÅõÀÚÇÒ °÷À» ¼±ÅÃÇÏ¼¼¿ä!");
+			System.out.println("[1] »ï¼ºÀüÀÚ [2] ¼¿Æ®¸®¿Â [3] Ä«Ä«¿À [4] ¾Æ¹«°Íµµ ¼±ÅÃÇÏÁö ¾Ê´Â´Ù(¿ø±İÀ¯Áö)");
 			int sel = sc.nextInt();
 			if (sel == 1) {
 				if (cnt == 2) {
@@ -444,8 +444,8 @@ public class Invest {
 					num1 = -(num0 / 100) * 30;
 				}
 				num0 = num0 + num1;
-				System.out.println("1ë…„ íˆ¬ì ì†ìµì•¡ : " + num1 + "ì›");
-				System.out.println("ì”ì•¡ì€ " + num0 + "ì› ì…ë‹ˆë‹¤.");
+				System.out.println("1³â ÅõÀÚ ¼ÕÀÍ¾× : " + num1 + "¿ø");
+				System.out.println("ÀÜ¾×Àº " + num0 + "¿ø ÀÔ´Ï´Ù.");
 
 			} else if (sel == 2) {
 				if (cnt == 2) {
@@ -456,8 +456,8 @@ public class Invest {
 				}
 
 				num0 = num0 + num1;
-				System.out.println("1ë…„ íˆ¬ì ì†ìµì•¡ : " + num1 + "ì›");
-				System.out.println("ì”ì•¡ì€ " + num0 + "ì› ì…ë‹ˆë‹¤.");
+				System.out.println("1³â ÅõÀÚ ¼ÕÀÍ¾× : " + num1 + "¿ø");
+				System.out.println("ÀÜ¾×Àº " + num0 + "¿ø ÀÔ´Ï´Ù.");
 
 			} else if (sel == 3) {
 				if (cnt == 2) {
@@ -467,22 +467,22 @@ public class Invest {
 					num1 = (num0 / 100) * 60;
 				}
 				num0 = num0 + num1;
-				System.out.println("1ë…„ íˆ¬ì ì†ìµì•¡ : " + num1 + "ì›");
-				System.out.println("ì”ì•¡ì€ " + num0 + "ì› ì…ë‹ˆë‹¤.");
+				System.out.println("1³â ÅõÀÚ ¼ÕÀÍ¾× : " + num1 + "¿ø");
+				System.out.println("ÀÜ¾×Àº " + num0 + "¿ø ÀÔ´Ï´Ù.");
 
 			} else if (sel == 4) {
 				num0 = num0 + sum;
 				if(cnt == 2 || cnt == 4) {
 					if(buy == 1) {
-						System.out.println("1ë…„ íˆ¬ì ì†ìµì•¡ : - 100000ì›" );
+						System.out.println("1³â ÅõÀÚ ¼ÕÀÍ¾× : - 100000¿ø" );
 				} 
-					System.out.println("1ë…„ íˆ¬ì ì†ìµì•¡ : " + sum + "ì›");
+					System.out.println("1³â ÅõÀÚ ¼ÕÀÍ¾× : " + sum + "¿ø");
 				}
 				
-				System.out.println("ì”ì•¡ì€ " + num0 + "ì› ì…ë‹ˆë‹¤.");
+				System.out.println("ÀÜ¾×Àº " + num0 + "¿ø ÀÔ´Ï´Ù.");
 
 			} else {
-				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
+				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
 
 			}
 			cnt++;
@@ -494,7 +494,7 @@ public class Invest {
 					psmt.setInt(1,num0);				
 					psmt.setString(2,id);
 					rs = psmt.executeUpdate();
-					System.out.println("ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
+					System.out.println("Á¾·áµÇ¾ú½À´Ï´Ù.");
 					Rank rank = new Rank();
 					rank.gamerank();
 
@@ -503,13 +503,13 @@ public class Invest {
 					e.printStackTrace();
 				}
 			} else {
-				System.out.println("ê³„ì†í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+				System.out.println("°è¼ÓÇÏ½Ã°Ú½À´Ï±î?");
 				System.out.println("[1] Yes [2] NO");
 				num2 = sc.nextInt();
 			}
 			if (num2 == 2) {
-				System.out.println("ì”ì•¡ì€ " + num0 + "ì› ì…ë‹ˆë‹¤.");
-				System.out.println("ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤!");
+				System.out.println("ÀÜ¾×Àº " + num0 + "¿ø ÀÔ´Ï´Ù.");
+				System.out.println("Á¾·áµÇ¾ú½À´Ï´Ù!");
 				break;
 			}
 
