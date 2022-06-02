@@ -12,6 +12,7 @@ public class Invest {
 	Connection conn; // DB 연결을 위한 객체
 	PreparedStatement psmt; // SQL문을 실행하는 객체
 	int rs; // Query의 결과값을 받아오는 객체
+	DAO dao = new DAO();
 
 	public void investhigh(String id) {
 		Random r = new Random();
@@ -59,6 +60,7 @@ public class Invest {
 				}
 			}
 
+			dao.selectNews(cnt);
 			System.out.println(cnt + ". 투자할 곳을 선택하세요!");
 			System.out.println("[1] 삼성전자 [2] 셀트리온 [3] 카카오 [4] 아무것도 선택하지 않는다(원금유지)");
 			int sel = sc.nextInt();
@@ -187,6 +189,8 @@ public class Invest {
 			}
 
 			num1 = ((num0 / 100) * r.nextInt(155) - 55);
+			
+			dao.selectNews(cnt);
 			System.out.println(cnt + ". 투자할 곳을 선택하세요!");
 			System.out.println("[1] 삼성전자 [2] 셀트리온 [3] 카카오 [4] 아무것도 선택하지 않는다(원금유지)");
 			int sel = sc.nextInt();
@@ -314,6 +318,9 @@ public class Invest {
 			}
 
 			num1 = ((num0 / 100) * r.nextInt(95) - 35);
+			
+			dao.selectNews(cnt);
+			
 			System.out.println(cnt + ". 투자할 곳을 선택하세요!");
 			System.out.println("[1] 삼성전자 [2] 셀트리온 [3] 카카오 [4] 아무것도 선택하지 않는다(원금유지)");
 			int sel = sc.nextInt();
