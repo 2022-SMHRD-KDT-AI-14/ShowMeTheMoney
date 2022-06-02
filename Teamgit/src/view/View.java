@@ -13,6 +13,7 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 
 	public static void main(String[] args) {
 		MusicFile music = new MusicFile();
+		
 		String login_id = ""; // 로그인한 id 받기
 		
 		Scanner sc = new Scanner(System.in);
@@ -63,16 +64,21 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 		while(true) {
 			System.out.println("    [1]신규회원가입 [2]로그인 [3] 종료");
 			int menu = sc.nextInt();
+			music.music_plus();
 			if (menu == 1) {
 				System.out.println("===회원가입===");
 				System.out.print("ID을 입력하세요 >> ");
 				String id = sc.next();
+				music.music_plus();
 				System.out.print("PW를 입력하세요 >> ");
 				String pw = sc.next();
+				music.music_plus();
 				System.out.print("닉네임을 입력하세요 >> ");
 				String name = sc.next();
+				music.music_plus();
 				System.out.print("성별을 입력하세요 (MAN, WOMAN) >> ");
 				String gender = sc.next();
+				music.music_plus();
 				DTO dto = new DTO(id, pw, name, gender);
 				Join dao = new Join();
 				int cnt = dao.insert(dto);
@@ -88,8 +94,10 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 				model.Login log = new Login();
 				System.out.print("아이디 입력 >> ");
 				String user_id = sc.next();
+				music.music_plus();
 				System.out.print("비밀번호 입력 >> ");
 				String user_pw = sc.next();
+				music.music_plus();
 				DTO dto = new DTO(user_id, user_pw);
 				login_id = log.login(dto); // 받은 아이디값 login에 저장
 				
