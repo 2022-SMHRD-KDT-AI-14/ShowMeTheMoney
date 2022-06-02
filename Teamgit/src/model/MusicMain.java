@@ -8,8 +8,6 @@ public class MusicMain {
 		
 //		music.music_main();
 		
-//		music.music_minus();
-		
 //		music.music_plus();
 		
 		
