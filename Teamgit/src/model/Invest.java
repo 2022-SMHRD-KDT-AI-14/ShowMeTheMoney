@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.Random;
 import java.util.Scanner;
 
+
 public class Invest {
 	MusicFile music = new MusicFile();
 	
@@ -308,9 +309,15 @@ public class Invest {
 					psmt.setInt(1,num0);				
 					psmt.setString(2,id);
 					rs = psmt.executeUpdate();
-					System.out.println("종료되었습니다.");
+					System.out.println();
+					System.out.println();
+					System.out.println("5년의 대장정이 끝났습니다.");
+					System.out.println("당신의 주식 실력은!!!!!!");
+					System.out.println("===================================");
 					Rank rank = new Rank();
 					rank.gameRank();
+					System.out.println("===================================");
+				
 
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
@@ -618,9 +625,14 @@ public class Invest {
 					psmt.setInt(1,num0);				
 					psmt.setString(2,id);
 					rs = psmt.executeUpdate();
-					System.out.println("종료되었습니다.");
+					System.out.println();
+					System.out.println();
+					System.out.println("5년의 대장정이 끝났습니다.");
+					System.out.println("당신의 주식 실력은!!!!!!");
+					System.out.println("===================================");
 					Rank rank = new Rank();
 					rank.gameRank();
+					System.out.println("===================================");
 
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
@@ -931,9 +943,14 @@ public class Invest {
 					psmt.setInt(1,num0);				
 					psmt.setString(2,id);
 					rs = psmt.executeUpdate();
-					System.out.println("종료되었습니다.");
+					System.out.println();
+					System.out.println();
+					System.out.println("5년의 대장정이 끝났습니다.");
+					System.out.println("당신의 주식 실력은!!!!!!");
+					System.out.println("===================================");
 					Rank rank = new Rank();
 					rank.gameRank();
+					System.out.println("===================================");
 
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
