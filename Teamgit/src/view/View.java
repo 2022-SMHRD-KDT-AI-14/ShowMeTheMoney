@@ -20,10 +20,10 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 //		invest money = new invest();
 		Invest money = new Invest();
 		music.music_main();
-		System.out.println("강원뱅크에 오신것을 환영합니다. \n신규 계좌 개설시 투자 초기금 100만원을 지원해드립니다. \n* 지금 바로 가입하세요 *");
+		System.out.println(" 스마트문에 오신것을 환영합니다. \n신규 계좌 개설시 투자 초기금 100만원을 지원해드립니다. \n* 지금 바로 가입하세요 *");
 
 		while(true) {
-			System.out.println("[1]회원가입 [2]로그인 [3] 종료");
+			System.out.println("[1]신규회원가입 [2]로그인 [3] 종료");
 			int menu = sc.nextInt();
 			if (menu == 1) {
 				System.out.println("===회원가입===");
