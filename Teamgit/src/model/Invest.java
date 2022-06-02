@@ -48,6 +48,12 @@ public class Invest {
 			}       
 
 			if (cnt == 2 ) {
+				try {                           //타이머
+					Thread.sleep(2000);         //타이머
+				} catch (InterruptedException e) {  //타이머
+					// TODO Auto-generated catch block //타이머
+					e.printStackTrace(); //타이머
+				}       
 				System.out.println(
 						"                                          \r\n"
 						+ "                  -;;,                  \r\n"
@@ -150,6 +156,12 @@ public class Invest {
 					
 				
 				}if (cnt == 4 ) {
+					try {                           //타이머
+						Thread.sleep(2000);         //타이머
+					} catch (InterruptedException e) {  //타이머
+						// TODO Auto-generated catch block //타이머
+						e.printStackTrace(); //타이머
+					}       
 					System.out.println(
 							"                                          \r\n"
 							+ "                  -;;,                  \r\n"
@@ -495,6 +507,12 @@ public class Invest {
 			}       
 			// 알고리즘
 			if (cnt == 2 ) {
+				try {                           //타이머
+					Thread.sleep(2000);         //타이머
+				} catch (InterruptedException e) {  //타이머
+					// TODO Auto-generated catch block //타이머
+					e.printStackTrace(); //타이머
+				}       
 				System.out.println(
 						"                                 \r\n"
 						+ "                  -;;,                  \r\n"
@@ -595,6 +613,12 @@ public class Invest {
 					
 				
 				}if (cnt == 4 ) {
+					try {                           //타이머
+						Thread.sleep(2000);         //타이머
+					} catch (InterruptedException e) {  //타이머
+						// TODO Auto-generated catch block //타이머
+						e.printStackTrace(); //타이머
+					}       
 					System.out.println(
 							"                                          \r\n"
 							+ "                  -;;,                  \r\n"
@@ -898,6 +922,12 @@ public class Invest {
 				e.printStackTrace(); //타이머
 			}       
 			if (cnt == 2 ) {
+				try {                           //타이머
+					Thread.sleep(2000);         //타이머
+				} catch (InterruptedException e) {  //타이머
+					// TODO Auto-generated catch block //타이머
+					e.printStackTrace(); //타이머
+				}       
 				
 				System.out.println(
 						"                                 \r\n"
@@ -1000,6 +1030,12 @@ public class Invest {
 					
 				
 				}if (cnt == 4 ) {
+					try {                           //타이머
+						Thread.sleep(2000);         //타이머
+					} catch (InterruptedException e) {  //타이머
+						// TODO Auto-generated catch block //타이머
+						e.printStackTrace(); //타이머
+					}       
 					System.out.println(
 							"                                 \r\n"
 							+ "                  -;;,                  \r\n"
