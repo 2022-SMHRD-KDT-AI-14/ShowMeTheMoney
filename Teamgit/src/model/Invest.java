@@ -13,11 +13,11 @@ public class Invest {
 	PreparedStatement psmt; // SQL문을 실행하는 객체
 	int rs; // Query의 결과값을 받아오는 객체
 
-	public void investhigh(String id) {
+	MusicFile music = new MusicFile();
+	public void investhigh(String id) {	
 		Random r = new Random();
 		Scanner sc = new Scanner(System.in);
 		int num0 = 1000000;
-
 		int cnt = 1;
 		int sum = 0;
 		int num2 = 0;
@@ -53,20 +53,21 @@ public class Invest {
 				System.out.println("정보를 구매하시겠습니까?");
 				System.out.println(" [1] YES(10만원 차감)  [2] NO");
 				int buy = sc.nextInt();
+				music.music_plus();
 				if (buy == 1) {
 					num0 = num0 - 100000;
 				}
 			}
-
 			System.out.println(cnt + ". 투자할 곳을 선택하세요!");
 			System.out.println("[1] 삼성전자 [2] 셀트리온 [3] 카카오 [4] 아무것도 선택하지 않는다(원금유지)");
 			int sel = sc.nextInt();
+			music.music_plus();
 			if (sel == 1) {
 				if (cnt == 2) {
 					num1 = ((num0 / 100) * 55);
 				}
 				if (cnt == 4) {
-					num1 = (num0 / 100) * 120;
+					num1 = - (num0 / 100) * 60;
 				}
 				num0 = num0 + num1;
 				System.out.println("1년 투자 손익액 : " + num1);
@@ -86,10 +87,10 @@ public class Invest {
 
 			} else if (sel == 3) {
 				if (cnt == 2) {
-					num1 = -(num0 / 100) * 120;
+					num1 = -(num0 / 100) * 60;
 				}
 				if (cnt == 4) {
-					num1 = (num0 / 100) * 130;
+					num1 = (num0 / 100) * 110;
 				}
 				num0 = num0 + num1;
 				System.out.println("1년 투자 손익액 : " + num1);
@@ -126,6 +127,7 @@ public class Invest {
 				System.out.println("계속하시겠습니까?");
 				System.out.println("[1] Yes [2] NO");
 				num2 = sc.nextInt();
+				music.music_plus();
 			}
 			if (num2 == 2) {
 				System.out.println("잔액은 " + num0 + "원 입니다.");
@@ -172,6 +174,8 @@ public class Invest {
 				System.out.println("정보를 구매하시겠습니까?");
 				System.out.println(" [1] YES(10만원 차감)  [2] NO");
 				int buy = sc.nextInt();
+				music.music_plus();
+				
 				if (buy == 1) {
 					num0 = num0 - 100000;
 				}
@@ -181,6 +185,7 @@ public class Invest {
 			System.out.println(cnt + ". 투자할 곳을 선택하세요!");
 			System.out.println("[1] 삼성전자 [2] 셀트리온 [3] 카카오 [4] 아무것도 선택하지 않는다(원금유지)");
 			int sel = sc.nextInt();
+			music.music_plus();
 			if (sel == 1) {
 				if (cnt == 2) {
 					num1 = ((num0 / 100) * 60);
@@ -231,6 +236,7 @@ public class Invest {
 				System.out.println("계속하시겠습니까?");
 				System.out.println("[1] Yes [2] NO");
 				num2 = sc.nextInt();
+				music.music_plus();
 			}
 			if (num2 == 2) {
 				System.out.println("잔액은 " + num0 + "원 입니다.");
@@ -277,6 +283,7 @@ public class Invest {
 				System.out.println("정보를 구매하시겠습니까?");
 				System.out.println("[1] YES(10만원 차감)  [2] NO");
 				int buy = sc.nextInt();
+				music.music_plus();
 				if (buy == 1) {
 					num0 = num0 - 100000;
 				}
@@ -286,6 +293,7 @@ public class Invest {
 			System.out.println(cnt + ". 투자할 곳을 선택하세요!");
 			System.out.println("[1] 삼성전자 [2] 셀트리온 [3] 카카오 [4] 아무것도 선택하지 않는다(원금유지)");
 			int sel = sc.nextInt();
+			music.music_plus();
 			if (sel == 1) {
 				if (cnt == 2) {
 					num1 = ((num0 / 100) * 50);
@@ -336,6 +344,7 @@ public class Invest {
 				System.out.println("계속하시겠습니까?");
 				System.out.println("[1] Yes [2] NO");
 				num2 = sc.nextInt();
+				music.music_plus();
 			}
 			if (num2 == 2) {
 				System.out.println("잔액은 " + num0 + "원 입니다.");
