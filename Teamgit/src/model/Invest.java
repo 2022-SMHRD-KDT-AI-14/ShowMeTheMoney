@@ -660,6 +660,7 @@ public class Invest {
 			// 알고리즘
 			dao.selectNews(cnt);
 			if (cnt == 2 ) {
+				
 				System.out.println(
 						"                                 \r\n"
 						+ "                  -;;,                  \r\n"
@@ -995,3 +996,4 @@ public class Invest {
 	
 	
 }
+

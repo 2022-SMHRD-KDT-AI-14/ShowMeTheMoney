@@ -14,7 +14,7 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 	public static void main(String[] args) {
 		MusicFile music = new MusicFile();
 		
-		String login_id = ""; // 로그인한 id 받기
+		String user_id = ""; // 로그인한 id 받기
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -104,9 +104,9 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 				}
 			} else if (menu == 2) {
 				System.out.println("==== 로그인 ====");
-				model.Login log = new Login();
+				Login log = new Login();
 				System.out.print("아이디 입력 >> ");
-				String user_id = sc.next();
+				user_id = sc.next();
 				music.musicPlus();
 				System.out.print("비밀번호 입력 >> ");
 				String user_pw = sc.next();
@@ -150,11 +150,11 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 		System.out.println("==================================================================");
 	    int select = sc.nextInt();
 	    if(select == 1) {
-	    	money.investLow(login_id);
+	    	money.investLow(user_id);
 	    }else if( select == 2) {
-	    	money.investMid(login_id);
+	    	money.investMid(user_id);
 	    } else if (select == 3) {
-	    	money.investHigh(login_id); // 로그인한 id로 출력
+	    	money.investHigh(user_id); // 로그인한 id로 출력
 	    } else {
 	    	System.out.println("잘못 입력하셨습니다!");
 	    }
