@@ -16,7 +16,9 @@ public class Invest {
 	PreparedStatement psmt = null; // SQL문을 실행하는 객체
 	int rs; // Query의 결과값을 받아오는 객체
 	DAO dao = new DAO();
-
+	String finishMent = "5년의 대장정이 끝났습니다. \n당신의 주식 실력은!!!!!! ";
+	String[] strArray = finishMent.split("");
+	
 	public void investHigh(String id) {
 		Random r = new Random();
 		Scanner sc = new Scanner(System.in);
@@ -455,8 +457,17 @@ public class Invest {
 					rs = psmt.executeUpdate();
 					System.out.println();
 					System.out.println();
-					System.out.println("5년의 대장정이 끝났습니다.");
-					System.out.println("당신의 주식 실력은!!!!!!");
+//					System.out.println("5년의 대장정이 끝났습니다.");
+//					System.out.println("당신의 주식 실력은!!!!!!");
+			        try {
+			        	for(int i=0; i < finishMent.length(); i++) {
+			    			System.out.print(finishMent.charAt(i));
+			    			Thread.sleep(100);
+			    		}
+			        } catch (InterruptedException e) {
+			            e.printStackTrace();
+			        }
+			        System.out.println();
 					System.out.println("                        .,               ,::,:;;\r\n"
 							+ "                         .;:~              .:;,.:;\r\n"
 							+ "                         =..:                     \r\n"
@@ -972,8 +983,17 @@ public class Invest {
 					rs = psmt.executeUpdate();
 					System.out.println();
 					System.out.println();
-					System.out.println("5년의 대장정이 끝났습니다.");
-					System.out.println("당신의 주식 실력은!!!!!!");
+//					System.out.println("5년의 대장정이 끝났습니다.");
+//					System.out.println("당신의 주식 실력은!!!!!!");
+			        try {
+			        	for(int i=0; i < finishMent.length(); i++) {
+			    			System.out.print(finishMent.charAt(i));
+			    			Thread.sleep(100);
+			    		}
+			        } catch (InterruptedException e) {
+			            e.printStackTrace();
+			        }
+			        System.out.println();
 					System.out.println("                                       \r\n"
 							+ "                         .;:~              \r\n"
 							+ "                         =..:                     \r\n"
@@ -1490,8 +1510,17 @@ public class Invest {
 					rs = psmt.executeUpdate();
 					System.out.println();
 					System.out.println();
-					System.out.println("5년의 대장정이 끝났습니다.");
-					System.out.println("당신의 주식 실력은!!!!!!");
+//					System.out.println("5년의 대장정이 끝났습니다.");
+//					System.out.println("당신의 주식 실력은!!!!!!");
+			        try {
+			        	for(int i=0; i < finishMent.length(); i++) {
+			    			System.out.print(finishMent.charAt(i));
+			    			Thread.sleep(100);
+			    		}
+			        } catch (InterruptedException e) {
+			            e.printStackTrace();
+			        }
+			        System.out.println();
 					System.out.println("                        .,               ,::,:;;\r\n"
 							+ "                         .;:~              .:;,.:;\r\n"
 							+ "                         =..:                     \r\n"
