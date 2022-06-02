@@ -66,8 +66,8 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 			}
 		}
 		
-		
-		System.out.println("난이도를 설정하세요!");
+		System.out.println();
+		System.out.println("======================= 난이도를 설정하세요! =======================");
 		System.out.println("[1] 쉬움(손익률 변동 작음) [2] 보통(손익률 변동 보통) [3] 어려움(손익률 변동 큼)");
 	    int select = sc.nextInt();
 	    if(select == 1) {
