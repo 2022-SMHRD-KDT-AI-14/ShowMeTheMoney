@@ -71,9 +71,9 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 		System.out.println("[1] 쉬움(손익률 변동 작음) [2] 보통(손익률 변동 보통) [3] 어려움(손익률 변동 큼)");
 	    int select = sc.nextInt();
 	    if(select == 1) {
-	    	money.investlow();
+	    	money.investlow(login_id);
 	    }else if( select == 2) {
-	    	money.investmid();
+	    	money.investmid(login_id);
 	    } else if (select == 3) {
 	    	money.investhigh(login_id); // 로그인한 id로 출력
 	    } else {
