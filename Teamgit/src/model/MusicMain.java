@@ -6,9 +6,9 @@ public class MusicMain {
 		
 		MusicFile music = new MusicFile();
 		
-//		music.music_main();
+//		music.musicMain();
 		
-//		music.music_plus();
+//		music.musicPlus();
 		
 		
 	}

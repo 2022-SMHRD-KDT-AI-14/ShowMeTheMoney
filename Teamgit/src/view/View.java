@@ -20,7 +20,7 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 		
 //		invest money = new invest();
 		Invest money = new Invest();
-		music.music_main();
+		music.musicMain();
 		System.out.println(" \n"
 				+ "\n"
 				+ "                                     . .                                             \n"
@@ -62,54 +62,86 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 		
 
 		while(true) {
-			System.out.println("    [1]신규회원가입 [2]로그인 [3] 종료");
+			System.out.println("  [1]신규회원가입 [2]로그인 [3] 랭크조회 [4]종료");
 			int menu = sc.nextInt();
-			music.music_plus();
+			music.musicPlus();
 			if (menu == 1) {
-				System.out.println("===회원가입===");
+				System.out.println("=== 회원가입 ===");
 				System.out.print("ID을 입력하세요 >> ");
 				String id = sc.next();
-				music.music_plus();
+				music.musicPlus();
 				System.out.print("PW를 입력하세요 >> ");
 				String pw = sc.next();
-				music.music_plus();
+				music.musicPlus();
 				System.out.print("닉네임을 입력하세요 >> ");
 				String name = sc.next();
-				music.music_plus();
+				music.musicPlus();
 				System.out.print("성별을 입력하세요 (MAN, WOMAN) >> ");
 				String gender = sc.next();
-				music.music_plus();
+				music.musicPlus();
 				DTO dto = new DTO(id, pw, name, gender);
 				Join dao = new Join();
 				int cnt = dao.insert(dto);
 				if (cnt > 0) {
-					System.out.println("회원가입 성공");
+//					System.out.println("!! 회원가입 성공 !!");
+					System.out.println("\r\n"
+							+ "\r\n"
+							+ "                                                                      \r\n"
+							+ "  .@-           @   .    @@  .        .    ..   .    .   .   ......   \r\n"
+							+ "  :~@;        @@@@@ @  ~@:*@ @, ,@@@@ @   =@:@  @    @   @   @@@@@@   \r\n"
+							+ "  -@. @@            @  ;@  @ @,    .@ @   @  @! @   -@ @@@        @   \r\n"
+							+ "  -@.   ~!@;  !@@@; @   :@@. @,    @: @   @- @- @   @$@  @     @. ;   \r\n"
+							+ "  -@.     @@  @. *@ @  @@@@@@@,   *#  @@:  @@   @  @= ~@ @  @@@@@@@@  \r\n"
+							+ "  -@. ;#;~     @@@  @    .@~;@,  *@   @    @.   @    -@@@.    .@@@    \r\n"
+							+ "  -@@#          @   @   @.@  @, -@    @    @@@@@@   ,@.  @   #@  :@   \r\n"
+							+ "  -@.        ~@@@@@~@   @             @    @,   @   ,@   @   @*  .@.  \r\n"
+							+ "  -@.               @   @@@@@@~       @    @@@@@@    .@@@,    :@@@.   \r\n"
+							+ "  -@.                                                                 \r\n"
+							+ "");
 					System.out.println("로그인으로 이동해 주세요^^");
 				} else {
 					System.out.println("회원가입 실패..다시 가입해주세요");
 				}
-//				System.out.println("다음으로~");
 			} else if (menu == 2) {
 				System.out.println("==== 로그인 ====");
 				model.Login log = new Login();
 				System.out.print("아이디 입력 >> ");
 				String user_id = sc.next();
-				music.music_plus();
+				music.musicPlus();
 				System.out.print("비밀번호 입력 >> ");
 				String user_pw = sc.next();
-				music.music_plus();
+				music.musicPlus();
 				DTO dto = new DTO(user_id, user_pw);
-				login_id = log.login(dto); // 받은 아이디값 login에 저장
+				boolean result = log.login(dto); // 받은 아이디값 login에 저장
 				
-// 			    if() {
-//					// 로그인이 성공 게임으로 진행
+				if(result == true) {
+//					System.out.println("!! 로그인 성공 !!");
+					System.out.println("\r\n"
+							+ " @@:                                 @       .   .   ......           \r\n"
+							+ ".@~@,,       @@@@@@   :@@@@@;  ,@@@~ @       @:., @  ~@@@@@*          \r\n"
+							+ ".@.-;@@;-    :::::@       ,@;  @  :@ @       @*-@@@    ~, @!          \r\n"
+							+ ".@.   --@=-  @@@@@@       ,@;  @  :@ @      =@#:  @    =@ -.          \r\n"
+							+ ".@.    .=@~  @=           ,@;   @@@: @     $@ ~@~ @ -@@@@@@@;         \r\n"
+							+ ".@..-,=!     @@@@@@       ,#:   .,   @       -:@@-   .-@@@-,          \r\n"
+							+ ".@@;       ;;;=@;;; ,;;;;!#!,   ~@   :       @;;;@!  @=;;;@~          \r\n"
+							+ ".@-         @@@@@@@@  @@@@@@@   ~@@@@@       @!  @-  @#,  @*          \r\n"
+							+ ".@-                                           !@@,    ;@@#.           \r\n"
+							+ "");
 					break;
-//				}
+					
+				}else {
+					System.out.println("로그인 실패..");
+					continue;
+				}
 
 			} else if (menu == 3) {
+				Rank rank = new Rank();
+				rank.gameRank();
+			}else if(menu==4) {
 				System.out.println("종료되었습니다.");
 				break;
 			}
+			
 		}
 		
 		System.out.println();
@@ -118,21 +150,14 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 		System.out.println("==================================================================");
 	    int select = sc.nextInt();
 	    if(select == 1) {
-	    	money.investlow(login_id);
+	    	money.investLow(login_id);
 	    }else if( select == 2) {
-	    	money.investmid(login_id);
+	    	money.investMid(login_id);
 	    } else if (select == 3) {
-	    	money.investhigh(login_id); // 로그인한 id로 출력
+	    	money.investHigh(login_id); // 로그인한 id로 출력
 	    } else {
 	    	System.out.println("잘못 입력하셨습니다!");
 	    }
-		
-
-
-		
-//		//22.05.30 혜원 
-//		Rank rank = new Rank();
-//		rank.gamerank();
 
 	}
 }

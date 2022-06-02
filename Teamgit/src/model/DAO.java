@@ -15,25 +15,8 @@ public class DAO {
 	// 뉴스 출력 메소드
 	
 	public void buyNews(int cnt) {
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-
-		String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
-		String db_id = "campus_e_0516_2";
-		String db_pw = "smhrd2";
-
-		try {
-			conn = DriverManager.getConnection(url, db_id, db_pw);
-			if (conn != null) {
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
+		
+		connect();
 		String sql = "select * from news";
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -58,57 +41,18 @@ public class DAO {
 			System.out.print(story + "\t");
 			System.out.println();
 
-			
-			
 //			선생님이 출력문을 보기 좋게 꾸민 방법~ 몰라도 됨?
 //			System.out.printf("%10s\t%10s\t%10s%n", "ID", "PW", "NAME");
 //			System.out.printf("%10s\t%10s\t%10s%n", id, pw, name);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			try {
-
-				if (rs != null) {
-					rs.close();
-				}
-				if (psmt != null) {
-					psmt.close();
-				}
-				if (conn != null) {
-					conn.close();
-				}
-
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
 		}
 
 	}
 	
 	public void selectNews(int cnt) {
-
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("드라이버 로딩 성공");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-
-		String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
-		String db_id = "campus_e_0516_2";
-		String db_pw = "smhrd2";
-
-		try {
-			conn = DriverManager.getConnection(url, db_id, db_pw);
-			if (conn != null) {
-				System.out.println("DB 연결 성공");
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
+		connect();
 		String sql = "select * from news";
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -142,22 +86,6 @@ public class DAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			try {
-
-				if (rs != null) {
-					rs.close();
-				}
-				if (psmt != null) {
-					psmt.close();
-				}
-				if (conn != null) {
-					conn.close();
-				}
-
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
 		}
 
 	}
@@ -165,28 +93,7 @@ public class DAO {
 	
 	// 시드머니 출력 메소드
 	public void selectSeed() {
-
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("드라이버 로딩 성공");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-
-		String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
-		String db_id = "campus_e_0516_2";
-		String db_pw = "smhrd2";
-
-		try {
-			conn = DriverManager.getConnection(url, db_id, db_pw);
-			if (conn != null) {
-				System.out.println("DB 연결 성공");
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
+		connect();
 		String sql = "select name, seedmoney from user_info";
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -214,29 +121,47 @@ public class DAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			try {
-
-				if (rs != null) {
-					rs.close();
-				}
-				if (psmt != null) {
-					psmt.close();
-				}
-				if (conn != null) {
-					conn.close();
-				}
-
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
 		}
-
 	}
 
 	
 	
-	
+	private void connect() {
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver"); // 컴파일해야 경로가 맞는지 아닌지 확인해야하므로 예외처리 (try,catch)
+
+			// 2. DB연결
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"; // DB주소
+			String db_id = "campus_e_0516_2"; // db_id
+			String db_pw = "smhrd2"; // db_pw
+
+			// DB 연결을 위한 길 안내 (통로열기)
+			conn = DriverManager.getConnection(url, db_id, db_pw);
+			if (conn != null) {
+//				System.out.println("DB 연결 성공!");
+			}
+		} catch (ClassNotFoundException e) {
+			System.out.println("드라이버 로딩 실패");
+		} catch (SQLException e) {
+			System.out.println("DB 연결 실패");
+		}
+
+	}
+
+	private void close() {
+		// 4. 닫기
+		try {
+			if (psmt != null) {
+				psmt.close();
+			}
+			if (conn != null) {
+				conn.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
 
 

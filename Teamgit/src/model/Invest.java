@@ -11,13 +11,12 @@ import java.util.Scanner;
 public class Invest {
 	MusicFile music = new MusicFile();
 	
-	
-	Connection conn; // DB 연결을 위한 객체
-	PreparedStatement psmt; // SQL문을 실행하는 객체
+	Connection conn = null; // DB 연결을 위한 객체
+	PreparedStatement psmt = null; // SQL문을 실행하는 객체
 	int rs; // Query의 결과값을 받아오는 객체
 	DAO dao = new DAO();
 
-	public void investhigh(String id) {
+	public void investHigh(String id) {
 		Random r = new Random();
 		Scanner sc = new Scanner(System.in);
 		int num0 = 1000000;
@@ -28,26 +27,9 @@ public class Invest {
 		int num3 = 1;
 		int buy = 0;
 
-		String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"; // DB주소
-		String db_id = "campus_e_0516_2"; // db_id
-		String db_pw = "smhrd2"; // db_pw
-
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			try {
-				conn = DriverManager.getConnection(url, db_id, db_pw);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		connect();
 		// 이익률 140% 손해율 -70%
-		music.music_main();
+		music.musicMain();
 
 		int num1 = (num0 / 100) * (r.nextInt(210) - 70);
 
@@ -104,7 +86,7 @@ public class Invest {
 				System.out.println("-----------------------------");
 					System.out.println("[1] Yes(10만원 차감) [2] NO");
 					buy = sc.nextInt();
-					music.music_plus();
+					music.musicPlus();
 					if (buy == 1) {
 						num0 = num0 - 100000;
 						System.out.println();
@@ -113,7 +95,7 @@ public class Invest {
 						System.out.println("===========================");
 						System.out.println("[1] 삼성전자  [2] 셀트리온  [3] 카카오");
 					    int buy2 = sc.nextInt();
-						music.music_plus();
+						music.musicPlus();
 					    if(buy2==1) {
 					System.out.println("                            ..                       ..                                    \r\n"
 							+ "                      @@@@=   @@@@   @@@$ :@@@  -@@@@,  @@ =@#  @@@  @@  !@@@@.                     \r\n"
@@ -206,7 +188,7 @@ public class Invest {
 					System.out.println("-----------------------------");
 					System.out.println("[1] Yes(10만원 차감) [2] NO");
 					buy = sc.nextInt();
-					music.music_plus();
+					music.musicPlus();
 					if (buy == 1) {
 						num0 = num0 - 100000;
 						System.out.println();
@@ -215,7 +197,7 @@ public class Invest {
 						System.out.println("===========================");
 						System.out.println("[1] 삼성전자  [2] 셀트리온  [3] 카카오");
 					    int buy2 = sc.nextInt();
-						music.music_plus();
+						music.musicPlus();
 					    if(buy2==1) {
 					    	System.out.println("   ..                         ..                       ..                       \r\n"
 					    			+ "                      @@@@=   @@@@   @@@$ :@@@  -@@@@,  @@ =@#  @@@  @@  !@@@@.                     \r\n"
@@ -266,7 +248,7 @@ public class Invest {
 			System.out.println(cnt + ". 투자할 곳을 선택하세요!");
 			System.out.println("[1] 삼성전자 [2] 셀트리온 [3] 카카오 [4] 아무것도 선택하지 않는다(원금유지)");
 			int sel = sc.nextInt();
-			music.music_plus();
+			music.musicPlus();
 			if (sel == 1) {
 				if (cnt == 2) {
 					num1 = ((num0 / 100) * 55);
@@ -328,7 +310,7 @@ public class Invest {
 					rs = psmt.executeUpdate();
 					System.out.println("종료되었습니다.");
 					Rank rank = new Rank();
-					rank.gamerank();
+					rank.gameRank();
 
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
@@ -339,7 +321,7 @@ public class Invest {
 				System.out.println("계속하시겠습니까?");
 				System.out.println("[1] Yes [2] NO");
 				num2 = sc.nextInt();
-				music.music_plus();
+				music.musicPlus();
 			}
 			if (num2 == 2) {
 				System.out.println("잔액은 " + num0 + "원 입니다.");
@@ -350,26 +332,8 @@ public class Invest {
 		}
 		
 
-	
-
-	public void investmid(String id) {
-		String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"; // DB주소
-		String db_id = "campus_e_0516_2"; // db_id
-		String db_pw = "smhrd2"; // db_pw
-
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			try {
-				conn = DriverManager.getConnection(url, db_id, db_pw);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void investMid(String id) {
+		connect();
 		Random r = new Random();
 		Scanner sc = new Scanner(System.in);
 		int num0 = 1000000;
@@ -432,7 +396,7 @@ public class Invest {
 				System.out.println("-----------------------------");
 					System.out.println("[1] Yes(10만원 차감) [2] NO");
 					buy = sc.nextInt();
-					music.music_plus();
+					music.musicPlus();
 					if (buy == 1) {
 						num0 = num0 - 100000;
 						System.out.println("==============================");
@@ -532,7 +496,7 @@ public class Invest {
 					System.out.println("-----------------------------");
 					System.out.println("[1] Yes(10만원 차감) [2] NO");
 					buy = sc.nextInt();
-					music.music_plus();
+					music.musicPlus();
 					if (buy == 1) {
 						num0 = num0 - 100000;
 						System.out.println("==============================");
@@ -540,7 +504,7 @@ public class Invest {
 						System.out.println("==============================");
 						System.out.println("[1] 삼성전자  [2] 셀트리온  [3] 카카오");
 					    int buy2 = sc.nextInt();
-						music.music_plus();
+						music.musicPlus();
 					    if(buy2==1) {
 					    	System.out.println("                            ..                       ..                                         \\r\\n\"\r\n"
 					    			+ "	+ \"                      @@@@=   @@@@   @@@$ :@@@  -@@@@,  @@ =@#  @@@  @@  !@@@@.                     \\r\\n\"\r\n"
@@ -593,7 +557,7 @@ public class Invest {
 			System.out.println(cnt + ". 투자할 곳을 선택하세요!");
 			System.out.println("[1] 삼성전자 [2] 셀트리온 [3] 카카오 [4] 아무것도 선택하지 않는다(원금유지)");
 			int sel = sc.nextInt();
-			music.music_plus();
+			music.musicPlus();
 			if (sel == 1) {
 				if (cnt == 2) {
 					num1 = ((num0 / 100) * 60);
@@ -656,7 +620,7 @@ public class Invest {
 					rs = psmt.executeUpdate();
 					System.out.println("종료되었습니다.");
 					Rank rank = new Rank();
-					rank.gamerank();
+					rank.gameRank();
 
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
@@ -666,7 +630,7 @@ public class Invest {
 				System.out.println("계속하시겠습니까?");
 				System.out.println("[1] Yes [2] NO");
 				num2 = sc.nextInt();
-				music.music_plus();
+				music.musicPlus();
 			}
 			if (num2 == 2) {
 				System.out.println("잔액은 " + num0 + "원 입니다.");
@@ -678,24 +642,8 @@ public class Invest {
 
 	}
 
-	public void investlow(String id) {
-		String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"; // DB주소
-		String db_id = "campus_e_0516_2"; // db_id
-		String db_pw = "smhrd2"; // db_pw
-
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			try {
-				conn = DriverManager.getConnection(url, db_id, db_pw);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void investLow(String id) {
+		connect();
 		Random r = new Random();
 		Scanner sc = new Scanner(System.in);
 		int num0 = 1000000;
@@ -758,7 +706,7 @@ public class Invest {
 				System.out.println("-----------------------------");
 					System.out.println("[1] Yes(10만원 차감) [2] NO");
 					buy = sc.nextInt();
-					music.music_plus();
+					music.musicPlus();
 					if (buy == 1) {
 						num0 = num0 - 100000;
 						System.out.println("==============================");
@@ -766,7 +714,7 @@ public class Invest {
 						System.out.println("==============================");
 						System.out.println("[1] 삼성전자  [2] 셀트리온  [3] 카카오");
 					    int buy2 = sc.nextInt();
-						music.music_plus();
+						music.musicPlus();
 					    if(buy2==1) {
 					    	System.out.println("                            ..                       ..                                         \\r\\n\"\r\n"
 					    			+ "	+ \"                      @@@@=   @@@@   @@@$ :@@@  -@@@@,  @@ =@#  @@@  @@  !@@@@.                     \\r\\n\"\r\n"
@@ -859,7 +807,7 @@ public class Invest {
 					System.out.println("-----------------------------");
 					System.out.println("[1] Yes(10만원 차감) [2] NO");
 					buy = sc.nextInt();
-					music.music_plus();
+					music.musicPlus();
 					if (buy == 1) {
 						num0 = num0 - 100000;
 						System.out.println();
@@ -868,7 +816,7 @@ public class Invest {
 						System.out.println("==========================");
 						System.out.println("[1] 삼성전자  [2] 셀트리온  [3] 카카오");
 					    int buy2 = sc.nextInt();
-						music.music_plus();
+						music.musicPlus();
 					    if(buy2==1) {
 					    	System.out.println("                            ..                       ..                                         \\r\\n\"\r\n"
 					    			+ "	+ \"                      @@@@=   @@@@   @@@$ :@@@  -@@@@,  @@ =@#  @@@  @@  !@@@@.                     \\r\\n\"\r\n"
@@ -922,7 +870,7 @@ public class Invest {
 			System.out.println(cnt + ". 투자할 곳을 선택하세요!");
 			System.out.println("[1] 삼성전자 [2] 셀트리온 [3] 카카오 [4] 아무것도 선택하지 않는다(원금유지)");
 			int sel = sc.nextInt();
-			music.music_plus();
+			music.musicPlus();
 			if (sel == 1) {
 				if (cnt == 2) {
 					num1 = ((num0 / 100) * 50);
@@ -984,7 +932,7 @@ public class Invest {
 					rs = psmt.executeUpdate();
 					System.out.println("종료되었습니다.");
 					Rank rank = new Rank();
-					rank.gamerank();
+					rank.gameRank();
 
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
@@ -994,7 +942,7 @@ public class Invest {
 				System.out.println("계속하시겠습니까?");
 				System.out.println("[1] Yes [2] NO");
 				num2 = sc.nextInt();
-				music.music_plus();
+				music.musicPlus();
 			}
 			if (num2 == 2) {
 				System.out.println("잔액은 " + num0 + "원 입니다.");
@@ -1005,4 +953,45 @@ public class Invest {
 		}
 
 	}
+	
+	
+	private void connect() {
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver"); // 컴파일해야 경로가 맞는지 아닌지 확인해야하므로 예외처리 (try,catch)
+
+			// 2. DB연결
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"; // DB주소
+			String db_id = "campus_e_0516_2"; // db_id
+			String db_pw = "smhrd2"; // db_pw
+
+			// DB 연결을 위한 길 안내 (통로열기)
+			conn = DriverManager.getConnection(url, db_id, db_pw);
+			if (conn != null) {
+//				System.out.println("DB 연결 성공!");
+			}
+		} catch (ClassNotFoundException e) {
+			System.out.println("드라이버 로딩 실패");
+		} catch (SQLException e) {
+			System.out.println("DB 연결 실패");
+		}
+
+	}
+
+	private void close() {
+		// 4. 닫기
+		try {
+			if (psmt != null) {
+				psmt.close();
+			}
+			if (conn != null) {
+				conn.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
 }

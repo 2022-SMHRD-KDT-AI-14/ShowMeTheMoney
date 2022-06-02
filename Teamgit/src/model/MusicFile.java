@@ -3,7 +3,7 @@ package model;
 public class MusicFile {
 
 	
-	public void music_main() {
+	public void musicMain() {
 		// main BGM
 		MusicPlayer p = new MusicPlayer();
 
@@ -13,7 +13,7 @@ public class MusicFile {
 	}
 	
 	
-	public void music_plus() {
+	public void musicPlus() {
 		
 		// ¿Ã¿Õ bgm
 		
