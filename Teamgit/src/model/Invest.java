@@ -58,16 +58,41 @@ public class Invest {
 
 			dao.selectNews(cnt);
 			if (cnt == 2 ) {
+				System.out.println(" .@@@@@@@@@@@@@@@@  \r\n"
+						+ ".$@@@@@@@@@@@@@@@:  \r\n"
+						+ ",@@@@@@@@@@@@@@@@   \r\n"
+						+ ".!@@@@@@@@@@@@@@!   \r\n"
+						+ "  ,@@@@@#-,,,,,@:   \r\n"
+						+ "   .#@$#*      #:   \r\n"
+						+ "    ~@:,;,.  ,!~:   \r\n"
+						+ "     @: -.,* :,*:   \r\n"
+						+ "     :=,:.~~:.-~.   \r\n"
+						+ "     =! !   ~       \r\n"
+						+ "      *$*...~-.!    \r\n"
+						+ "     .#*;*:-::;#,   \r\n"
+						+ "     ,@@-= !@,;*~   \r\n"
+						+ "     ;:@-=@!-:;=~   \r\n"
+						+ "    *@:@#@$-;~*@#   \r\n"
+						+ " .,@@#.$@@-: =,@@@*,\r\n"
+						+ "!$@@@#, @@*.**$$*@@@\r\n"
+						+ "@@@@@@: =@@@#@-$!@@@\r\n"
+						+ "@@@@@@::*@@@@@$@@@=@\r\n"
+						+ "@@@@@@:@@@@@@@@@@@!#");
+				System.out.println();
+				System.out.println("!!빠빰!! 용현 다무스 !!!");
 				System.out.println();
 				System.out.println("-----------------------------");
-				System.out.println(" 용현쌤의 종목추천!! 구매하시겠습니까?");
+				System.out.println(" 용현쌤의 종목추천!! 구매하시겠습니까? (기회1번)");
 				System.out.println("-----------------------------");
 					System.out.println("[1] Yes(10만원 차감) [2] NO");
 					buy = sc.nextInt();
 					music.music_plus();
 					if (buy == 1) {
 						num0 = num0 - 100000;
+						System.out.println();
+						System.out.println("===========================");
 						System.out.println("어떤 종목의 정보를 구매하시겠습니까?");
+						System.out.println("===========================");
 						System.out.println("[1] 삼성전자  [2] 셀트리온  [3] 카카오");
 					    int buy2 = sc.nextInt();
 						music.music_plus();
@@ -82,16 +107,41 @@ public class Invest {
 					
 				
 				}if (cnt == 4 ) {
+					System.out.println(" .@@@@@@@@@@@@@@@@  \r\n"
+							+ ".$@@@@@@@@@@@@@@@:  \r\n"
+							+ ",@@@@@@@@@@@@@@@@   \r\n"
+							+ ".!@@@@@@@@@@@@@@!   \r\n"
+							+ "  ,@@@@@#-,,,,,@:   \r\n"
+							+ "   .#@$#*      #:   \r\n"
+							+ "    ~@:,;,.  ,!~:   \r\n"
+							+ "     @: -.,* :,*:   \r\n"
+							+ "     :=,:.~~:.-~.   \r\n"
+							+ "     =! !   ~       \r\n"
+							+ "      *$*...~-.!    \r\n"
+							+ "     .#*;*:-::;#,   \r\n"
+							+ "     ,@@-= !@,;*~   \r\n"
+							+ "     ;:@-=@!-:;=~   \r\n"
+							+ "    *@:@#@$-;~*@#   \r\n"
+							+ " .,@@#.$@@-: =,@@@*,\r\n"
+							+ "!$@@@#, @@*.**$$*@@@\r\n"
+							+ "@@@@@@: =@@@#@-$!@@@\r\n"
+							+ "@@@@@@::*@@@@@$@@@=@\r\n"
+							+ "@@@@@@:@@@@@@@@@@@!#");
+					System.out.println();
+					System.out.println("!!빠빰!! 용현 다무스 !!!");
 					System.out.println();
 					System.out.println("-----------------------------");
-					System.out.println(" 용현쌤의 종목추천!! 구매하시겠습니까?");
+					System.out.println(" 용현쌤의 종목추천!! 구매하시겠습니까? (기회1번)");
 					System.out.println("-----------------------------");
 					System.out.println("[1] Yes(10만원 차감) [2] NO");
 					buy = sc.nextInt();
 					music.music_plus();
 					if (buy == 1) {
 						num0 = num0 - 100000;
+						System.out.println();
+						System.out.println("===========================");
 						System.out.println("어떤 종목의 정보를 구매하시겠습니까?");
+						System.out.println("===========================");
 						System.out.println("[1] 삼성전자  [2] 셀트리온  [3] 카카오");
 					    int buy2 = sc.nextInt();
 						music.music_plus();
@@ -150,8 +200,9 @@ public class Invest {
 				if(cnt == 2 || cnt == 4) {
 					if(buy == 1) {
 						System.out.println("1년 투자 손익액 : - 100000원" );
-				} 
+				} else {
 					System.out.println("1년 투자 손익액 : " + sum + "원");
+				}
 				}
 				
 				System.out.println("잔액은 " + num0 + "원 입니다.");
@@ -229,16 +280,40 @@ public class Invest {
 			dao.selectNews(cnt);
 			// 알고리즘
 			if (cnt == 2 ) {
+				System.out.println(" .@@@@@@@@@@@@@@@@  \r\n"
+						+ ".$@@@@@@@@@@@@@@@:  \r\n"
+						+ ",@@@@@@@@@@@@@@@@   \r\n"
+						+ ".!@@@@@@@@@@@@@@!   \r\n"
+						+ "  ,@@@@@#-,,,,,@:   \r\n"
+						+ "   .#@$#*      #:   \r\n"
+						+ "    ~@:,;,.  ,!~:   \r\n"
+						+ "     @: -.,* :,*:   \r\n"
+						+ "     :=,:.~~:.-~.   \r\n"
+						+ "     =! !   ~       \r\n"
+						+ "      *$*...~-.!    \r\n"
+						+ "     .#*;*:-::;#,   \r\n"
+						+ "     ,@@-= !@,;*~   \r\n"
+						+ "     ;:@-=@!-:;=~   \r\n"
+						+ "    *@:@#@$-;~*@#   \r\n"
+						+ " .,@@#.$@@-: =,@@@*,\r\n"
+						+ "!$@@@#, @@*.**$$*@@@\r\n"
+						+ "@@@@@@: =@@@#@-$!@@@\r\n"
+						+ "@@@@@@::*@@@@@$@@@=@\r\n"
+						+ "@@@@@@:@@@@@@@@@@@!#");
+				System.out.println();
+				System.out.println("!!빠빰!! 용현 다무스 !!!");
 				System.out.println();
 				System.out.println("-----------------------------");
-				System.out.println(" 용현쌤의 종목추천!! 구매하시겠습니까?");
+				System.out.println(" 용현쌤의 종목추천!! 구매하시겠습니까? (기회1번)");
 				System.out.println("-----------------------------");
 					System.out.println("[1] Yes(10만원 차감) [2] NO");
 					buy = sc.nextInt();
 					music.music_plus();
 					if (buy == 1) {
 						num0 = num0 - 100000;
+						System.out.println("==============================");
 						System.out.println("어떤 종목의 정보를 구매하시겠습니까?");
+						System.out.println("==============================");
 						System.out.println("[1] 삼성전자  [2] 셀트리온  [3] 카카오");
 					    int buy2 = sc.nextInt();
 					    if(buy2==1) {
@@ -252,16 +327,40 @@ public class Invest {
 					
 				
 				}if (cnt == 4 ) {
+					System.out.println(" .@@@@@@@@@@@@@@@@  \r\n"
+							+ ".$@@@@@@@@@@@@@@@:  \r\n"
+							+ ",@@@@@@@@@@@@@@@@   \r\n"
+							+ ".!@@@@@@@@@@@@@@!   \r\n"
+							+ "  ,@@@@@#-,,,,,@:   \r\n"
+							+ "   .#@$#*      #:   \r\n"
+							+ "    ~@:,;,.  ,!~:   \r\n"
+							+ "     @: -.,* :,*:   \r\n"
+							+ "     :=,:.~~:.-~.   \r\n"
+							+ "     =! !   ~       \r\n"
+							+ "      *$*...~-.!    \r\n"
+							+ "     .#*;*:-::;#,   \r\n"
+							+ "     ,@@-= !@,;*~   \r\n"
+							+ "     ;:@-=@!-:;=~   \r\n"
+							+ "    *@:@#@$-;~*@#   \r\n"
+							+ " .,@@#.$@@-: =,@@@*,\r\n"
+							+ "!$@@@#, @@*.**$$*@@@\r\n"
+							+ "@@@@@@: =@@@#@-$!@@@\r\n"
+							+ "@@@@@@::*@@@@@$@@@=@\r\n"
+							+ "@@@@@@:@@@@@@@@@@@!#");
+					System.out.println();
+					System.out.println("!!빠빰!! 용현 다무스 !!!");
 					System.out.println();
 					System.out.println("-----------------------------");
-					System.out.println(" 용현쌤의 종목추천!! 구매하시겠습니까?");
+					System.out.println(" 용현쌤의 종목추천!! 구매하시겠습니까? (기회1번)");
 					System.out.println("-----------------------------");
 					System.out.println("[1] Yes(10만원 차감) [2] NO");
 					buy = sc.nextInt();
 					music.music_plus();
 					if (buy == 1) {
 						num0 = num0 - 100000;
+						System.out.println("==============================");
 						System.out.println("어떤 종목의 정보를 구매하시겠습니까?");
+						System.out.println("==============================");
 						System.out.println("[1] 삼성전자  [2] 셀트리온  [3] 카카오");
 					    int buy2 = sc.nextInt();
 						music.music_plus();
@@ -322,8 +421,9 @@ public class Invest {
 				if(cnt == 2 || cnt == 4) {
 					if(buy == 1) {
 						System.out.println("1년 투자 손익액 : - 100000원" );
-				} 
+				} else {
 					System.out.println("1년 투자 손익액 : " + sum + "원");
+				}
 				}
 				
 				System.out.println("잔액은 " + num0 + "원 입니다.");
@@ -400,16 +500,40 @@ public class Invest {
 			// 알고리즘
 			dao.selectNews(cnt);
 			if (cnt == 2 ) {
+				System.out.println(" .@@@@@@@@@@@@@@@@  \r\n"
+						+ ".$@@@@@@@@@@@@@@@:  \r\n"
+						+ ",@@@@@@@@@@@@@@@@   \r\n"
+						+ ".!@@@@@@@@@@@@@@!   \r\n"
+						+ "  ,@@@@@#-,,,,,@:   \r\n"
+						+ "   .#@$#*      #:   \r\n"
+						+ "    ~@:,;,.  ,!~:   \r\n"
+						+ "     @: -.,* :,*:   \r\n"
+						+ "     :=,:.~~:.-~.   \r\n"
+						+ "     =! !   ~       \r\n"
+						+ "      *$*...~-.!    \r\n"
+						+ "     .#*;*:-::;#,   \r\n"
+						+ "     ,@@-= !@,;*~   \r\n"
+						+ "     ;:@-=@!-:;=~   \r\n"
+						+ "    *@:@#@$-;~*@#   \r\n"
+						+ " .,@@#.$@@-: =,@@@*,\r\n"
+						+ "!$@@@#, @@*.**$$*@@@\r\n"
+						+ "@@@@@@: =@@@#@-$!@@@\r\n"
+						+ "@@@@@@::*@@@@@$@@@=@\r\n"
+						+ "@@@@@@:@@@@@@@@@@@!#");
+				System.out.println();
+				System.out.println("!!빠빰!! 용현 다무스 !!!");
 				System.out.println();
 				System.out.println("-----------------------------");
-				System.out.println(" 용현쌤의 종목추천!! 구매하시겠습니까?");
+				System.out.println(" 용현쌤의 종목추천!! 구매하시겠습니까? (기회1번)");
 				System.out.println("-----------------------------");
 					System.out.println("[1] Yes(10만원 차감) [2] NO");
 					buy = sc.nextInt();
 					music.music_plus();
 					if (buy == 1) {
 						num0 = num0 - 100000;
+						System.out.println("==============================");
 						System.out.println("어떤 종목의 정보를 구매하시겠습니까?");
+						System.out.println("==============================");
 						System.out.println("[1] 삼성전자  [2] 셀트리온  [3] 카카오");
 					    int buy2 = sc.nextInt();
 						music.music_plus();
@@ -424,16 +548,41 @@ public class Invest {
 					
 				
 				}if (cnt == 4 ) {
+					System.out.println(" .@@@@@@@@@@@@@@@@  \r\n"
+							+ ".$@@@@@@@@@@@@@@@:  \r\n"
+							+ ",@@@@@@@@@@@@@@@@   \r\n"
+							+ ".!@@@@@@@@@@@@@@!   \r\n"
+							+ "  ,@@@@@#-,,,,,@:   \r\n"
+							+ "   .#@$#*      #:   \r\n"
+							+ "    ~@:,;,.  ,!~:   \r\n"
+							+ "     @: -.,* :,*:   \r\n"
+							+ "     :=,:.~~:.-~.   \r\n"
+							+ "     =! !   ~       \r\n"
+							+ "      *$*...~-.!    \r\n"
+							+ "     .#*;*:-::;#,   \r\n"
+							+ "     ,@@-= !@,;*~   \r\n"
+							+ "     ;:@-=@!-:;=~   \r\n"
+							+ "    *@:@#@$-;~*@#   \r\n"
+							+ " .,@@#.$@@-: =,@@@*,\r\n"
+							+ "!$@@@#, @@*.**$$*@@@\r\n"
+							+ "@@@@@@: =@@@#@-$!@@@\r\n"
+							+ "@@@@@@::*@@@@@$@@@=@\r\n"
+							+ "@@@@@@:@@@@@@@@@@@!#");
+					System.out.println();
+					System.out.println("!!빠빰!! 용현 다무스 !!!");
 					System.out.println();
 					System.out.println("-----------------------------");
-					System.out.println(" 용현쌤의 종목추천!! 구매하시겠습니까?");
+					System.out.println(" 용현쌤의 종목추천!! 구매하시겠습니까? (기회1번)");
 					System.out.println("-----------------------------");
 					System.out.println("[1] Yes(10만원 차감) [2] NO");
 					buy = sc.nextInt();
 					music.music_plus();
 					if (buy == 1) {
 						num0 = num0 - 100000;
+						System.out.println();
+						System.out.println("==========================");
 						System.out.println("어떤 종목의 정보를 구매하시겠습니까?");
+						System.out.println("==========================");
 						System.out.println("[1] 삼성전자  [2] 셀트리온  [3] 카카오");
 					    int buy2 = sc.nextInt();
 						music.music_plus();
@@ -495,8 +644,9 @@ public class Invest {
 				if(cnt == 2 || cnt == 4) {
 					if(buy == 1) {
 						System.out.println("1년 투자 손익액 : - 100000원" );
-				} 
+				}  else {
 					System.out.println("1년 투자 손익액 : " + sum + "원");
+				}
 				}
 				
 				System.out.println("잔액은 " + num0 + "원 입니다.");
