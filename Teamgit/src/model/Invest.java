@@ -22,6 +22,7 @@ public class Invest {
 		int sum = 0;
 		int num2 = 0;
 		int num3 = 1;
+		int buy = 0;
 
 		String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"; // DB주소
 		String db_id = "campus_e_0516_2"; // db_id
@@ -51,8 +52,8 @@ public class Invest {
 			num1 = (num0 / 100) * (r.nextInt(210) - 70);
 			if (cnt == 2 || cnt == 4) {
 				System.out.println("정보를 구매하시겠습니까?");
-				System.out.println(" [1] YES(10만원 차감)  [2] NO");
-				int buy = sc.nextInt();
+				System.out.println("[1] YES(10만원 차감)  [2] NO");
+				buy = sc.nextInt();
 				if (buy == 1) {
 					num0 = num0 - 100000;
 				}
@@ -97,7 +98,13 @@ public class Invest {
 
 			} else if (sel == 4) {
 				num0 = num0 + sum;
-				System.out.println("1년 투자 손익액 : " + num1);
+				if(cnt == 2 || cnt == 4) {
+					if(buy == 1) {
+						System.out.println("1년 투자 손익액 : - 100000" );
+				} 
+					System.out.println("1년 투자 손익액 : " + sum);
+				}
+				
 				System.out.println("잔액은 " + num0 + "원 입니다.");
 
 			} else {
@@ -132,10 +139,11 @@ public class Invest {
 				System.out.println("종료되었습니다!");
 				break;
 			}
-
+			}
 		}
+		
 
-	}
+	
 
 	public void investmid(String id) {
 		String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"; // DB주소
@@ -162,6 +170,7 @@ public class Invest {
 		int cnt = 1;
 		int sum = 0;
 		int num2 = 0;
+		int buy = 0;
 
 		// 이익률 100% 손해율 -55%
 
@@ -170,8 +179,8 @@ public class Invest {
 			// 알고리즘
 			if (cnt == 2 || cnt == 4) {
 				System.out.println("정보를 구매하시겠습니까?");
-				System.out.println(" [1] YES(10만원 차감)  [2] NO");
-				int buy = sc.nextInt();
+				System.out.println("[1] YES(10만원 차감)  [2] NO");
+				buy = sc.nextInt();
 				if (buy == 1) {
 					num0 = num0 - 100000;
 				}
@@ -217,8 +226,15 @@ public class Invest {
 
 			} else if (sel == 4) {
 				num0 = num0 + sum;
-				System.out.println("1년 투자 손익액 : " + num1);
+				if(cnt == 2 || cnt == 4) {
+					if(buy == 1) {
+						System.out.println("1년 투자 손익액 : - 100000" );
+				} 
+					System.out.println("1년 투자 손익액 : " + sum);
+				}
+				
 				System.out.println("잔액은 " + num0 + "원 입니다.");
+	
 
 			} else {
 				System.out.println("잘못입력하셨습니다.");
@@ -281,8 +297,9 @@ public class Invest {
 		int cnt = 1;
 		int sum = 0;
 		int num2 = 0;
+		int buy = 0;
 
-		// 이익률 70% 손해율 -35%
+		// 이익률 60% 손해율 -35%
 
 		int num1 = ((num0 / 100) * r.nextInt(95) - 35);
 		while (cnt <= 5) {
@@ -290,7 +307,7 @@ public class Invest {
 			if (cnt == 2 || cnt == 4) {
 				System.out.println("정보를 구매하시겠습니까?");
 				System.out.println("[1] YES(10만원 차감)  [2] NO");
-				int buy = sc.nextInt();
+			    buy = sc.nextInt();
 				if (buy == 1) {
 					num0 = num0 - 100000;
 				}
@@ -336,7 +353,13 @@ public class Invest {
 
 			} else if (sel == 4) {
 				num0 = num0 + sum;
-				System.out.println("1년 투자 손익액 : " + num1);
+				if(cnt == 2 || cnt == 4) {
+					if(buy == 1) {
+						System.out.println("1년 투자 손익액 : - 100000" );
+				} 
+					System.out.println("1년 투자 손익액 : " + sum);
+				}
+				
 				System.out.println("잔액은 " + num0 + "원 입니다.");
 
 			} else {
