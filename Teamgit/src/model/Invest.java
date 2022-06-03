@@ -488,6 +488,7 @@ public class Invest {
 							+ "		 :,!!:::;~::::!-;!:;~~~~:~:*;.:    \r\n"
 							+ "		    ,:-!.....        ..-!,;        \r\n"
 							+ "		         ~;:,,, .  .,,,;-          \");");
+					
 					try {
 			        	for(int i=0; i < finishMent.length(); i++) {
 			    			System.out.print(finishMent.charAt(i));
@@ -503,6 +504,7 @@ public class Invest {
 						// TODO Auto-generated catch block //타이머
 						e.printStackTrace(); //타이머
 					}
+					System.out.println();
 					System.out.println("===================================");
 					Rank rank = new Rank();
 					rank.gameRank();
@@ -1004,6 +1006,7 @@ public class Invest {
 						// TODO Auto-generated catch block //타이머
 						e.printStackTrace(); //타이머
 					}
+					System.out.println();
 					System.out.println("===================================");
 					Rank rank = new Rank();
 					rank.gameRank();
@@ -1506,6 +1509,7 @@ public class Invest {
 						// TODO Auto-generated catch block //타이머
 						e.printStackTrace(); //타이머
 					}
+					System.out.println();
 					System.out.println("===================================");
 					Rank rank = new Rank();
 					rank.gameRank();
