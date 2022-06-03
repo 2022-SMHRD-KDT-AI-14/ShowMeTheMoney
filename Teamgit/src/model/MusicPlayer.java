@@ -6,7 +6,8 @@ import javazoom.jl.player.MP3Player;
 
 public class MusicPlayer {
 	// Controller Class
-
+	// .\\ : 최상위 경로로 
+	// .\\music\\음악.mp3
 	ArrayList<Music> musicList = new ArrayList<Music>();
 
 	int curIndex = 0;
@@ -16,7 +17,8 @@ public class MusicPlayer {
 	public MusicPlayer() {
 
 		// 음악 전체 목록
-		musicList.add(new Music("BGM", "C:/Users/smhrd/Desktop/BGM.mp3"));
+//		musicList.add(new Music("BGM", "C:/Users/smhrd/Desktop/BGM.mp3"));
+		musicList.add(new Music("BGM", ".\\music\\BGM.mp3"));
 	}
 
 	public Music play() {

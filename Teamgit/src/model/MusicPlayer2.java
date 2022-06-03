@@ -16,7 +16,9 @@ public class MusicPlayer2 {
 	public MusicPlayer2() {
 
 		// 음악 전체 목록
-		musicList.add(new Music("이익BGM", "C:/Users/smhrd/Desktop/이익BGM.mp3"));
+//		musicList.add(new Music("이익BGM", "C:/Users/smhrd/Desktop/이익BGM.mp3"));
+		musicList.add(new Music("이익BGM", ".\\music\\이익BGM.mp3"));
+		
 	}
 
 	public Music play() {
