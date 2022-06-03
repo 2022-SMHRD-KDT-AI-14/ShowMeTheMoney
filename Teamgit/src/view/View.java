@@ -138,7 +138,25 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 							+ ".@-         @@@@@@@@  @@@@@@@   ~@@@@@       @!  @-  @#,  @*          \r\n"
 							+ ".@-                                           !@@,    ;@@#.           \r\n"
 							+ "");
+					
+					System.out.println();
+					System.out.println("========================= 난이도를 설정하세요! =========================");
+					System.out.println("[1] 쉬움(손익률 변동 작음) [2] 보통(손익률 변동 보통) [3] 어려움(손익률 변동 큼)   ");
+					System.out.println("==================================================================");
+				    int select = sc.nextInt();
+				    if(select == 1) {
+				    	money.investLow(user_id);
+				    }else if( select == 2) {
+				    	money.investMid(user_id);
+				    } else if (select == 3) {
+				    	money.investHigh(user_id); // 로그인한 id로 출력
+				    } else {
+				    	System.out.println("잘못 입력하셨습니다!");
+				    }
+					
+					
 					break;
+					
 					
 				}else {
 					System.out.println("로그인 실패..");
@@ -155,20 +173,6 @@ public class View { // view 사용자에게 보이기 위한 main 만들기
 			
 		}
 		
-		System.out.println();
-		System.out.println("========================= 난이도를 설정하세요! =========================");
-		System.out.println("[1] 쉬움(손익률 변동 작음) [2] 보통(손익률 변동 보통) [3] 어려움(손익률 변동 큼)   ");
-		System.out.println("==================================================================");
-	    int select = sc.nextInt();
-	    if(select == 1) {
-	    	money.investLow(user_id);
-	    }else if( select == 2) {
-	    	money.investMid(user_id);
-	    } else if (select == 3) {
-	    	money.investHigh(user_id); // 로그인한 id로 출력
-	    } else {
-	    	System.out.println("잘못 입력하셨습니다!");
-	    }
 
 	}
 }
