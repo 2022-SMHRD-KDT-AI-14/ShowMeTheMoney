@@ -32,7 +32,6 @@ public class Invest {
 
 		connect();
 		// 이익률 140% 손해율 -70%
-		music.musicMain();
 
 		int num1 = (num0 / 100) * (r.nextInt(210) - 70);
 
