@@ -34,4 +34,4 @@ constraint stocks_stock_id_pk primary key(stock_id),
 constraint stocks_news_id_fk foreign key(news_id) references news(news_id)
 );
 
-
+delete from USER_INFO where id = 'lulu';
